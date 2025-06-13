@@ -11,6 +11,53 @@ body {
   color: #333;
   line-height: 1.6;
 }
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --card-bg: #fff;
+  --accent: #0056b3;
+  --hero-overlay: rgba(0, 0, 0, 0.6);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1f1f1f;
+  --accent: #4dabf7;
+  --hero-overlay: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.course-card, .faculty-card, .testimonial, .stats > div {
+  background: var(--card-bg);
+}
+
+/* Update hero overlay */
+.hero {
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+              url('https://source.unsplash.com/1600x600/?students,learning') center/cover no-repeat;
+}
+
+/* Toggle button styles */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
 
 section {
   padding: 60px 20px;
