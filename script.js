@@ -10,6 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
   loader.style.fontWeight = "bold";
   form.appendChild(loader);
 
+  document.addEventListener("DOMContentLoaded", () => {
+  // ... your form code already here
+
+  const toggleBtn = document.getElementById("toggle-btn");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+});
+
   // Smooth scroll on submit
   function scrollToMessage() {
     responseMsg.scrollIntoView({ behavior: "smooth", block: "center" });
