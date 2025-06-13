@@ -6,6 +6,38 @@
   --section-dark: #e3f2fd;
   --card-bg: #ffffff;
 }
+.results {
+  background: var(--section-dark);
+  color: var(--text);
+  padding-bottom: 80px;
+}
+
+.result-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.result-card {
+  background: var(--card-bg);
+  border-left: 6px solid var(--accent);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+}
+
+.result-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
 
 body.dark {
   --bg: #121212;
